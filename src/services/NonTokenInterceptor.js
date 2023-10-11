@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const NonTokenInterceptor = axios.create({
-	// baseURL: process.env.REACT_APP_BASE_URL,
+	baseURL: process.env.REACT_APP_BASE_URL,
 	// timeout: 15000,
 });
 
@@ -14,7 +14,6 @@ NonTokenInterceptor.interceptors.request.use(
 		return Promise.reject(error);
 	},
 );
-
 
 NonTokenInterceptor.interceptors.response.use(
 	response => {
